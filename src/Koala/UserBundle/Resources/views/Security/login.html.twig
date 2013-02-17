@@ -1,6 +1,6 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "KoalaMiabBundle::parchemin.html.twig" %}
 
-{% block fos_user_content %}
+{% block parchemin %}
 {% if error %}
     <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
 {% endif %}
@@ -38,4 +38,4 @@
 
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
 </form>
-{% endblock fos_user_content %}
+{% endblock parchemin %}
