@@ -16,4 +16,14 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * @Route("/throwBottle", name = "throwBottle")
+     * @Template()
+     */
+    public function throwBottleAction ()
+    {
+        return array();
+    }
+
 }

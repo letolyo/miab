@@ -10,18 +10,48 @@ html {
 
 
 #menuhaut {
-    float: right;
+    /*float: right;*/
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
 
 #plane {
     position: absolute;
     right: 0;
-    margin-top: 50px;
+    top: 50px;
     background-image: url("../images/avion.png");
     background-repeat: no-repeat;
     background-position: left top;
-/*    min-height: 80px;
-    min-width: 160px;
-*/
+    z-index: -1;
+}
+
+
+.btn {
+    width: 185px; float: right; padding: 10px 15px; margin: 0 15px 0 0;
+    -moz-box-shadow: 0px 0px 5px #999;-webkit-box-shadow: 0px 0px 5px #999;
+    border: 1px solid #556f8c;
+    background-color: #fff;
+    cursor: pointer;
+    color:black;
+    text-align: center;
+    text-decoration:none;
+}
+
+.parchemin {
+    /*position: absolute;*/
+    background-image: url("../images/parchemin2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-width: 640px;
+    min-height: 480px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+.insideparchemin {
+	padding: 150px 200px 150px 200px;
 }
