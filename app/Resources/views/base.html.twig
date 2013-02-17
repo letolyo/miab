@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 1001px)" href="{{ asset('css/style.css') }}" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            function goLeft() {
+                $("#plane").animate({"right": "+="+(document.body.offsetWidth - $("#plane").width() )}, 10000, function() {
+                    document.getElementById("plane").style.backgroundPosition = "right top";
+                    document.getElementById("plane").style.backgroundImage = 'url("../images/avionr.png")';
+                    document.getElementById("banderoll").style.marginRight = '164px';
+                    document.getElementById("banderoll").style.marginLeft = '0px';
+                    goRight();
+                });
+            }
+
+            function goRight(){
+                //$("#plane").animate({"left": "+=100%"}, 10000, function() {
+                $("#plane").animate({"right": "-="+(document.body.offsetWidth - $("#plane").width() )}, 10000, function() {
+                    document.getElementById("plane").style.backgroundPosition = "left top";
+                    document.getElementById("plane").style.backgroundImage = 'url("../images/avion.png")';
+                    document.getElementById("banderoll").style.marginRight = '0px';
+                    document.getElementById("banderoll").style.marginLeft = '164px';
+                    goLeft();
+                });
+            }
+        </script> 
+    </head>
+    <body  onload="goLeft()">
+        <div id="plane"><div id="banderoll" style="margin-left:164px;margin-right:0px;width:468px;height:60px;background-color:green;"></div> </div>
+        {% block menuhaut %}{% endblock %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
