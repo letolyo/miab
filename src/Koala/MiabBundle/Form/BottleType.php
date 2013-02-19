@@ -16,7 +16,9 @@ class BottleType extends AbstractType
             ->add('visibilite', 'choice', array(
     'choices' => array('0' => 'Public', '1' => 'Private')))
             ->add('bottleChoice')
-            ->add('parcheminChoice')
+            ->add('parcheminChoice', 'choice', array(
+    'choices' => array('1' => 'mar', '2' => 'gr', '3' => 'tr'), 
+             'attr' => array("onchange" =>"javascript:changeParchemin(this.value);")))
         ;
     }
 

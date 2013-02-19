@@ -29,6 +29,10 @@
                     goLeft();
                 });
             }
+            function changeParchemin($val) {
+                $urlv='url("../images/parchemin'+$val+'.png")';
+                document.getElementById("parch").style.backgroundImage=$urlv;
+            }
         </script> 
     </head>
     <body  onload="goLeft()">
