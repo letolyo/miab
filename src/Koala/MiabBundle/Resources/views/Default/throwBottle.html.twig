@@ -1,38 +1,9 @@
 {% extends 'KoalaMiabBundle::parchemin.html.twig' %}
 {% block parchemin %}
-SALOPE ! </br>
-SALOPE ! </br>
-SALOPE ! </br>
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! 
-SALOPE ! </br>
-SALOPE ! </br>
-SALOPE ! </br>
-SALOPE ! </br>
-SALOPE ! </br>
+
+<form id="form_bottle" action="{{ path('throwBottle') }}" method="post">
+        {{ form_widget(formbottle) }}
+        <input type="submit" value="Throw this bottle !" class="btn btn-primary"/>
+</form>
+
 {% endblock %}

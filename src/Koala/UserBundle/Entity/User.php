@@ -138,4 +138,14 @@ class User extends BaseUser
 			$this->setUsername($fbdata['email']);
         }
     }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

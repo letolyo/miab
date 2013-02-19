@@ -5,6 +5,9 @@ namespace Koala\MiabBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Koala\MiabBundle\Form\BottleType;
+use Koala\MiabBundle\Entity\Bottle;
+
 
 class DefaultController extends Controller
 {
@@ -23,7 +26,9 @@ class DefaultController extends Controller
      */
     public function throwBottleAction ()
     {
-        return array();
+        $bottle = new Bottle();
+        $form = $this->createForm(new BottleType(), $bottle);
+        return array('formbottle' => $form->createView());
     }
 
 }
