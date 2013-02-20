@@ -12,13 +12,18 @@ class BottleType extends AbstractType
     {
         $builder
             ->add('message', 'textarea', array( 'label' => 'Message '))
-            ->add('periodicity', 'integer', array('label' => 'Next apparition in'))
+            ->add('periodicity', 'integer', array('label' => 'Next apparition in', 'data'=>'30'))
             ->add('visibilite', 'choice', array(
-    'choices' => array('0' => 'Public', '1' => 'Private')))
-            ->add('bottleChoice')
+                  'label'=>'Visibility', 
+                  'choices' => array('0' => 'Public', '1' => 'Private')))
+            ->add('bottleChoice', 'choice', array(
+                  'label'=>'Chose a bottle',
+                  'choices' => array('1'=>'Classic', '2'=>'Psy', '3'=>'Purple', '4'=>'Wine', '5'=>'Poison'),
+                  'attr' => array("onchange" => "javascript:changeBottle(this.value);")))
             ->add('parcheminChoice', 'choice', array(
-    'choices' => array('1' => 'mar', '2' => 'gr', '3' => 'tr'), 
-             'attr' => array("onchange" =>"javascript:changeParchemin(this.value);")))
+                  'label' => 'Chose a parchment',
+                  'choices' => array('1' => 'Classic brown', '2' => 'Classic grey', '3' => 'Vertical grey'), 
+                  'attr' => array("onchange" =>"javascript:changeParchemin(this.value);")))
         ;
     }
 
