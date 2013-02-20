@@ -2,7 +2,7 @@
 {% block parchemin %}
 <div>
 <div id="bottleChoice" style="float:right"></div>
-<form id="form_bottle" action="{{ path('throwBottle') }}" method="post">
+<form id="form_bottle" action="{{ path('throwBottle') }}" method="post" enctype="multipart/form-data">
         {{ form_widget(formbottle) }}
         <input type="submit" value="Throw this bottle !" class="formbtn"/>
 </form>

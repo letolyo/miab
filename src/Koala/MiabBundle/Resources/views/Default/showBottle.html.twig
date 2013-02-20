@@ -3,6 +3,9 @@
 <div>
 {{bottle.message}}
 </div>
+<div>
+<img src="{{ asset('upload/' ~ bottle.id ~'/' ~ bottle.image)}}" alt="" height="525" width="666" />
+</div>
 <div class="parchmentDate">
 {{bottle.createDate|date('Y-m-d')}}
 </div>

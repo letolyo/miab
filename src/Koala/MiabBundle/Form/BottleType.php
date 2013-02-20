@@ -12,6 +12,7 @@ class BottleType extends AbstractType
     {
         $builder
             ->add('message', 'textarea', array( 'label' => 'Message '))
+            ->add('image')
             ->add('periodicity', 'integer', array('label' => 'Next apparition in', 'data'=>'30'))
             ->add('visibilite', 'choice', array(
                   'label'=>'Visibility', 
