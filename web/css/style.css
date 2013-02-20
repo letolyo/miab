@@ -128,3 +128,18 @@ select {
         -moz-box-shadow: 0px 1px 0px;-webkit-box-shadow: 0px 1px 0px;
 }
 
+.parchmentDate {
+    font-family: Tangerine;
+    color: #444;
+    text-decoration: none;
+    word-spacing: normal;
+    text-align: left;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    font-size: 2.6em;
+    
+    float:right;
+    bottom: 0px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}

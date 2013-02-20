@@ -1,0 +1,10 @@
+{% extends 'KoalaMiabBundle::parchemin.html.twig' %}
+{% block parchemin %}
+<div>
+{{bottle.message}}
+</div>
+<div class="parchmentDate">
+{{bottle.createDate|date('Y-m-d')}}
+</div>
+
+{% endblock %}
