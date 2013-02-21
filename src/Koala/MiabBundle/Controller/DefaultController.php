@@ -46,6 +46,10 @@ class DefaultController extends Controller
                 // On l'enregistre notre objet $article dans la base de donn??es.
                 $em->persist($bottle);
                 $em->flush();
+                $this->get('session')->setFlash(
+                    'notice',
+                    'The bottle is sent ! Yay !'
+                );
                 return $this->redirect($this->generateUrl('miabIndex'));
             }
         }

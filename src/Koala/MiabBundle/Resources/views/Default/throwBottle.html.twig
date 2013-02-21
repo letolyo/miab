@@ -4,7 +4,9 @@
 <div id="bottleChoice" style="float:right"></div>
 <form id="form_bottle" action="{{ path('throwBottle') }}" method="post" enctype="multipart/form-data">
         {{ form_widget(formbottle) }}
-        <input type="submit" value="Throw this bottle !" class="formbtn"/>
+        <input type="submit" value="Throw this bottle !" class="formbtn" onclick='$("#bottleChoice").click(function () {
+      $(this).hide("fold", {}, 1000);
+});'/>
 </form>
 </div>
 

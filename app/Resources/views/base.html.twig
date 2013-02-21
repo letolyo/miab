@@ -42,6 +42,11 @@
     </head>
     <body  onload="goLeft()">
             <div id="plane"><div id="banderoll" style="margin-left:164px;margin-right:0px;width:468px;height:60px;background-color:green;"></div> </div>
+            {% if app.session.hasFlash('notice') %}
+                <div id="flash" class="flash-notice">
+                    {{ app.session.flash('notice') }}
+                </div>
+            {% endif %}
             {% block menuhaut %}{% endblock %}
             {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
