@@ -143,3 +143,8 @@ select {
     margin-right: 20px;
     margin-bottom: 20px;
 }
+
+.imgParch {
+    max-width: 100%;
+    max-height: 800px;
+}

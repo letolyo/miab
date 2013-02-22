@@ -17,7 +17,36 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $em = $this->getDoctrine()->getEntityManager();
+        $bottles = $em->createQueryBuilder()
+                    ->select('b')
+                    ->from('KoalaMiabBundle:Bottle',  'b')
+                    ->setMaxResults(10)
+                    ->getQuery()
+                    ->getResult();
+
+        $bottlesSet = array();
+        foreach ($bottles as $bottle)
+        {
+            $now = new \DateTime();
+            $nowDays = $now->getTimestamp() - $bottle->getCreateDate()->getTimestamp();
+            $totalDays = $bottle->getNextApparitionDate()->getTimestamp() - $bottle->getCreateDate()->getTimestamp();
+            if($now->getTimestamp() > $bottle->getNextApparitionDate()->getTimestamp()) {
+                $percent = 0;
+            } else {
+                $percent = 100 - (30 + $nowDays / $totalDays * 70);
+            }
+
+            $bottle->setPercentVisibility($percent);
+            $bottle->setDecalage(rand(1,90));
+            if ( empty($bottlesSet) ) {
+                $bottlesSet = array($bottle);
+            } else {
+                array_push($bottlesSet, $bottle);
+            }
+        }
+
+        return array("bottles" => $bottlesSet);
     }
 
     /**

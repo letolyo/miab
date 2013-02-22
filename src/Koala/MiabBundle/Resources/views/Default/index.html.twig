@@ -1,3 +1,17 @@
 {% extends 'KoalaMiabBundle::layout.html.twig' %}
 {% block body %}
+
+{% for bottle in bottles %}
+    <div class="seabottle" style="bottom:{{bottle.percentVisibility}}%;left:{{bottle.decalage}}%;position:absolute;">
+        {% if bottle.percentVisibility == 0 %}
+            <a href="{{ path('showBottle', { hash: bottle.bottleHash } ) }}">
+        {% endif %}
+            <img src="{{ asset(['images/bottle', bottle.bottleChoice, '.png']|join) }}" style="max-width:{{100 - bottle.percentVisibility}}px;"/>
+        {% if bottle.percentVisibility == 0 %}
+            </a>
+        {% endif %}
+    </div>
+{% endfor %}
+
+
 {% endblock %}

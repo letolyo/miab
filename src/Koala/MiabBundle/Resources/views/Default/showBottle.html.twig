@@ -4,7 +4,9 @@
 {{bottle.message}}
 </div>
 <div>
-<img src="{{ asset('upload/' ~ bottle.id ~'/' ~ bottle.image)}}" alt="" height="525" width="666" />
+{% if bottle.image != null %}
+<img src="{{ asset('upload/' ~ bottle.id ~'/' ~ bottle.image)}}" alt="" class="imgParch" />
+{% endif%}
 </div>
 <div class="parchmentDate">
 {{bottle.createDate|date('Y-m-d')}}

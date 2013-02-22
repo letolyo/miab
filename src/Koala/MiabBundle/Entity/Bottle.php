@@ -67,6 +67,8 @@ class Bottle
      */
     private $image;
 
+    protected $percentVisibility;
+    protected $decalage;
 
     /**
      * Get id
@@ -262,6 +264,25 @@ class Bottle
         return $this->message;
     }
 
+    public function setPercentVisibility($percentVisibility)
+    {
+        $this->percentVisibility = $percentVisibility;
+    }
+
+    public function getPercentVisibility()
+    {
+        return $this->percentVisibility;
+    }
+
+    public function setDecalage($decalage)
+    {
+        $this->decalage = $decalage;
+    }
+
+    public function getDecalage()
+    {
+        return $this->decalage;
+    }
 
 
  
